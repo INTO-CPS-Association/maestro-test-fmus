@@ -82,7 +82,7 @@ function overtureToolWrapper
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/fmi-interpreter-0.0.1-SNAPSHOT-jar-with-dependencies.jar -d $1/resources/
 
 		bindir=$1/build/
-		mkdir -p $bindir
+		mkdir -p $bindir/{darwin64,win32,win64,linux32,linux64}
 		#tool wrapper binaries
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/darwin64/libshmfmu.dylib -d $bindir/darwin64/
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win32/libshmfmu.dll -d $bindir/win32/
