@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-function compileDarwin
+function compileDarwin64
 {
 
-		echo Building Darwin .dylib
-		B=$1/build/darwin
+		echo Building Darwin 64 .dylib
+		B=$1/build/darwin64
 
 		rm -rf $B
 		mkdir -p $B
@@ -106,7 +106,7 @@ function assemble
 		cp $1/sources/*.* $B/fmu/sources/
 
 		BIN=$B/fmu/binaries
-		cp $B/darwin/*.dylib $BIN/darwin64/
+		cp $B/darwin64/*.dylib $BIN/darwin64/
 		cp $B/linux64/*.so $BIN/linux64/
 		cp $B/linux32/*.so $BIN/linux32/
 		cp $B/win64/*.dll $BIN/win64/
@@ -126,7 +126,7 @@ function xcompile
 {
 		D=$1
 		echo Compiling using CMake and make
-		compileDarwin $D
+		compileDarwin64 $D
 		compileLinux64 $D
 		compileLinux32 $D
 		compileWin64 $D
