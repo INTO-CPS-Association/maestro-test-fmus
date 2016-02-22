@@ -1,0 +1,3 @@
+[submodule "toolchains/cmake-toolchains"]
+	path = toolchains/cmake-toolchains
+	url = https://github.com/zyga/cmake-toolchains.git
