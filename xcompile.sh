@@ -88,7 +88,7 @@ function overtureToolWrapper
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win32/libshmfmu.dll -d $bindir/win32/
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win64/libshmfmu.dll -d $bindir/win64/
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux64/libshmfmu.so -d $bindir/linux64/
-
+		echo "not supported" >$bindir/linux32/libshmfmu.so
 }
 
 function assemble
