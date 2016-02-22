@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="Sine" guid="{70969c88-cb03-46d0-b49e-e37b1bbe68b4}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="Sine" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="10.0" stepSize="0.01" />
+<ModelVariables>
+<ScalarVariable name="output" valueReference="2" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="amplitude" valueReference="0" description="amplitude of the wave" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="omega" valueReference="1" description="angular frequency of the wave" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="1" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
