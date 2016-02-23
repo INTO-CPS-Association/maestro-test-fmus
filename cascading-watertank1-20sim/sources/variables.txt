@@ -1,0 +1,7 @@
+---------------------
+INITIALIZE INPUTS:
+	u[0] = 0.0;		/* leakage */
+	u[1] = 0.0;		/* valveControl */
+	u[2] = 0.0;		/* waterOut.e */
+
+---------------------

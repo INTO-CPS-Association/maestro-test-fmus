@@ -1,0 +1,1 @@
+#define FMI_GUID MODEL_GUID

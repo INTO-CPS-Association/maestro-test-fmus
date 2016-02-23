@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="CascadeWatertank1" guid="{4da879a6-0651-4db4-bb9e-72fa616b33a4}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="CascadeWatertank1" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="12.0" stepSize="0.01" />
+<ModelVariables>
+<ScalarVariable name="FlowSource.p.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="FlowSource.p.phi" valueReference="7" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="FlowSource.phi" valueReference="0" description="flow rate" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="FlowSource.inflow" valueReference="8" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.p.e" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.level" valueReference="10" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.area" valueReference="1" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.gravity" valueReference="2" variability="tunable" causality="parameter">
+<Real start="9.81" />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.liquid_density" valueReference="3" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.effort" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p1.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p2.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p3.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p1.phi" valueReference="24" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p2.phi" valueReference="7" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.ZeroJunction.p3.phi" valueReference="13" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.p.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.p.phi" valueReference="7" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.p1.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.p1.phi" valueReference="13" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.level" valueReference="10" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.FlowOut.p.e" valueReference="15" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.FlowOut.p.f" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.FlowOut.flow" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.FlowOut.effort" valueReference="15" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.R.p.e" valueReference="14" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.R.p.f" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.R.FlowOut" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.R.r" valueReference="4" variability="tunable" causality="parameter">
+<Real start="5.0" />
+</ScalarVariable>
+<ScalarVariable name="valve1.R.waterFlow" valueReference="12" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.valvecontrol" valueReference="16" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.powerIn.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.powerIn.phi" valueReference="13" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.powerOut.p" valueReference="14" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.powerOut.phi" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.leakage" valueReference="17" variability="continuous" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="valve1.Valve.leakage_value" valueReference="5" description="10 % leakage" variability="tunable" causality="parameter">
+<Real start="0.1" />
+</ScalarVariable>
+<ScalarVariable name="valve1.waterIn.p" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.waterIn.phi" valueReference="13" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.waterOut.e" valueReference="15" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.waterOut.f" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.valveControl" valueReference="16" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valve1.leakage" valueReference="17" variability="continuous" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="waterOut.e" valueReference="18" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="waterOut.f" valueReference="19" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valveControl" valueReference="20" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="leakage" valueReference="21" variability="continuous" causality="input">
+<Boolean start="false" />
+</ScalarVariable>
+<ScalarVariable name="level" valueReference="22" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.p.f" valueReference="24" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.volume" valueReference="23" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="tank1.Tank.volume_initial" valueReference="6" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="45" />
+<Unknown index="48" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
