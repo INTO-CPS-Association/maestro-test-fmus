@@ -1,0 +1,23 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+class UpperValveActuator
+
+instance variables
+	
+  public static valveState : real := 0.0;
+
+values
+
+  public open  : real = 1.0;
+  public close : real = 0.0;
+
+operations
+
+public setValveState : real ==> ()
+setValveState (state) == 
+  valveState := state;
+
+end UpperValveActuator

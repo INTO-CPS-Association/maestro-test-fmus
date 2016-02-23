@@ -1,0 +1,56 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+class Controller
+
+values
+
+  public maxlevel1 : real = 2.0; -- {m}
+  public minlevel1 : real = 1.0; -- {m}
+  public maxlevel2 : real = 3.0; -- {m}
+  public minlevel2 : real = 2.0; -- {m}
+
+instance variables
+
+  upperLevelSensor   : UpperLevelSensor;
+  lowerLevelSensor   : LowerLevelSensor;
+  upperValveActuator : UpperValveActuator;
+  lowerValveActuator : LowerValveActuator;
+
+operations
+
+public Controller : UpperLevelSensor * LowerLevelSensor * UpperValveActuator * LowerValveActuator ==> Controller
+Controller(ul,ll,uv,lv)==
+ (upperLevelSensor   := ul;
+  lowerLevelSensor   := ll;
+  upperValveActuator := uv;
+  lowerValveActuator := lv;
+  );
+
+private loop : () ==>()
+loop()==
+	cycles(2)
+   (-- retrieve the first value from Co-SIM
+    dcl uLevel : real := upperLevelSensor.getLevel(),
+        lLevel : real := lowerLevelSensor.getLevel();
+			
+    -- determine the valve setting or abort
+    -- determine the valve setting or abort
+    if uLevel >= maxlevel1
+    then upperValveActuator.setValveState(UpperValveActuator`open);
+    if uLevel <= minlevel1
+    then upperValveActuator.setValveState(UpperValveActuator`close);   
+
+    if lLevel >= maxlevel2
+    then lowerValveActuator.setValveState(LowerValveActuator`open);
+    if lLevel <= minlevel2
+    then lowerValveActuator.setValveState(LowerValveActuator`close);
+    
+   );
+
+thread
+periodic(10E6,0,0,0)(loop);	 
+		 
+end Controller

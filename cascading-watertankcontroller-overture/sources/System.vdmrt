@@ -1,0 +1,39 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+system System
+
+instance variables
+
+  public static controller : [Controller] := nil;
+  upperLevelSensor   : UpperLevelSensor;
+  lowerLevelSensor   : LowerLevelSensor;
+  upperValveActuator : UpperValveActuator;
+  lowerValveActuator : LowerValveActuator;
+
+-- Architecture definition
+
+	cpu1 : CPU := new CPU(<FP>, 20);
+--	cpu2 : CPU := new CPU(<FP>, 22E6);
+
+--bus : BUS := new BUS(<FCFS>,342,{cpu1,cpu2});
+
+
+operations
+
+public System : () ==> System
+System () == 
+(
+	upperLevelSensor   := new UpperLevelSensor();
+	lowerLevelSensor   := new LowerLevelSensor();
+	upperValveActuator := new UpperValveActuator();
+	lowerValveActuator := new LowerValveActuator();
+	
+	controller := new Controller(upperLevelSensor, lowerLevelSensor, upperValveActuator, lowerValveActuator);
+
+	cpu1.deploy(controller,"Controller");
+);
+
+end System

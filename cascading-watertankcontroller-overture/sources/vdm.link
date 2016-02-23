@@ -1,0 +1,10 @@
+input level1=System.upperLevelSensor.upperlevel;
+input level2=System.lowerLevelSensor.lowerlevel;
+output valveState1=System.upperValveActuator.valveState;
+output valveState2=System.lowerValveActuator.valveState;
+
+
+sdp maxlevel1=Controller.maxlevel1;
+sdp minlevel1=Controller.minlevel1; 
+sdp maxlevel2=Controller.maxlevel2;
+sdp minlevel2=Controller.minlevel2;

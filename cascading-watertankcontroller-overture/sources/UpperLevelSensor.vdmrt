@@ -1,0 +1,19 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+class UpperLevelSensor
+
+instance variables
+
+  upperlevel   : real := 0.0;
+  public fault : real := 0.0;
+  
+operations
+
+public getLevel : () ==> real
+getLevel () == 
+  return upperlevel;
+
+end UpperLevelSensor
