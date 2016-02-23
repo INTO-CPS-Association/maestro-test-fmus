@@ -148,7 +148,7 @@ do
 		echo "Folder is ${D}"
 		name=`echo $D| sed 's|\./||g'`
 		echo "Cleadning old builds ..."
-		rm -r $D/build/
+		rm -rf $D/build/
 		if [ -e "$D/mode.txt" ] 
 		then
 				if grep -q OVERTURE_TOOL_WRAPPER "$D/mode.txt"; then
