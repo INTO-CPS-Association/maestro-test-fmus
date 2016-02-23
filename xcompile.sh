@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+threads=4
+
 function compileDarwin64
 {
 
@@ -12,7 +14,7 @@ function compileDarwin64
 
 		cmake  -B$B -H$1 -DCMAKE_TOOLCHAIN_FILE=`readlink -f toolchains/osx-gcc.cmake` -DOSXCROSS_ROOT=$OSXCROSS_ROOT
 
-		make -C $B
+		make -C $B -j$threads
 
 }
 
@@ -27,7 +29,7 @@ function compileWin32
 
 		cmake  -B$B -H$1 -DCMAKE_TOOLCHAIN_FILE=`readlink -f toolchains/cmake-toolchains/Toolchain-Ubuntu-mingw32.cmake`
 
-		make -C $B
+		make -C $B -j$threads
 
 }
 
@@ -42,7 +44,7 @@ function compileWin64
 
 		cmake  -B$B -H$1 -DCMAKE_TOOLCHAIN_FILE=`readlink -f toolchains/cmake-toolchains/Toolchain-Ubuntu-mingw64.cmake`
 
-		make -C $B
+		make -C $B -j$threads
 
 }
 
@@ -55,7 +57,7 @@ function compileLinux64
 
 		cmake  -B$B -H$1
 
-		make -C $B
+		make -C $B -j$threads
 }
 
 function compileLinux32
@@ -68,7 +70,7 @@ function compileLinux32
 
 		cmake -B$B -H$1 -DLINK_FLAGS="-m32" -DCFLAGS="-m32"
 
-		make -C $B		
+		make -C $B -j$threads
 }
 
 
