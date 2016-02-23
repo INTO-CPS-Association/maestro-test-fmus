@@ -147,7 +147,8 @@ for D in `find . -maxdepth 1 -type d ! -path . ! -path *.git ! -path */includes 
 do
 		echo "Folder is ${D}"
 		name=`echo $D| sed 's|\./||g'`
-		echo $D
+		echo "Cleadning old builds ..."
+		rm -r $D/build/
 		if [ -e "$D/mode.txt" ] 
 		then
 				if grep -q OVERTURE_TOOL_WRAPPER "$D/mode.txt"; then
