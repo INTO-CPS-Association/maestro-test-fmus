@@ -85,12 +85,11 @@ function overtureToolWrapper
 		bindir=$1/build
 		mkdir -p $bindir/{darwin64,win32,win64,linux32,linux64}
 		#tool wrapper binaries
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/darwin64/libshmfmu.dylib -d $bindir/darwin64/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win32/libshmfmu.dll -d $bindir/win32/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win64/libshmfmu.dll -d $bindir/win64/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux64/libshmfmu.so -d $bindir/linux64/
-		echo "not supported" >$bindir/linux32/libshmfmu.so
-
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/darwin64/vdm-tool-wrapper.dylib -d $bindir/darwin64/
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win32/vdm-tool-wrapper.dll -d $bindir/win32/
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win64/vdm-tool-wrapper.dll -d $bindir/win64/
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux32/vdm-tool-wrapper.so -d $bindir/linux32/
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux64/vdm-tool-wrapper.so -d $bindir/linux64/
 		#rename
 		
 		
