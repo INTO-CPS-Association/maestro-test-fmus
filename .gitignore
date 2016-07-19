@@ -3,3 +3,14 @@ build
 *.zip
 *.jar
 *overture/resources/config.txt
+
+**/CMakeFiles
+**/*.cmake
+CMakeCache.txt
+.project
+.cproject
+MakeFile
+.settings
+*.so
+*.dll
+*.dylib
