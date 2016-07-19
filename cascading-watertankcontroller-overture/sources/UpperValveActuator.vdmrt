@@ -7,16 +7,16 @@ class UpperValveActuator
 
 instance variables
 	
-  public static valveState : real := 0.0;
+  public static valveState : bool :=false;
 
 values
 
-  public open  : real = 1.0;
-  public close : real = 0.0;
+  public open  : bool = true;
+  public close : bool = false;
 
 operations
 
-public setValveState : real ==> ()
+public setValveState : bool ==> ()
 setValveState (state) == 
   valveState := state;
 
