@@ -141,22 +141,34 @@ extern "C" fmi2Status fmi2SetDebugLogging(fmi2Component c, fmi2Boolean loggingOn
 
 extern "C" fmi2Status fmi2GetReal(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, fmi2Real value[])
 {
+	for(int i =0; i < nvr ; i++)
+	{
+		value[i] = 0;
+	}
 	return fmi2OK;
 }
 
 extern "C" fmi2Status fmi2GetInteger(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, fmi2Integer value[])
 {
+	for(int i =0; i < nvr ; i++)
+	{
+		value[i] = 0;
+	}
 	return fmi2OK;
 }
 
 extern "C" fmi2Status fmi2GetBoolean(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, fmi2Boolean value[])
 {
+	for(int i =0; i < nvr ; i++)
+	{
+		value[i] = false;
+	}
 	return fmi2OK;
 }
 
 extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, fmi2String value[])
 {
-	return fmi2OK;
+	return fmi2Warning;
 }
 
 extern "C" fmi2Status fmi2SetReal(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, const fmi2Real value[])
