@@ -78,6 +78,7 @@ function overtureToolWrapper
 {
 		wget http://overture.au.dk/into-cps/vdm-tool-wrapper/development/latest/vdm-tool-wrapper.zip -O vdm-tool-wrapper.zip
 
+		unzip -l vdm-tool-wrapper.zip
 		# resources
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/config.txt -d $1/resources/
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/fmi-interpreter-0.0.1-SNAPSHOT-jar-with-dependencies.jar -d $1/resources/
