@@ -291,10 +291,10 @@ extern "C" fmi2Status fmi2GetStringStatus(fmi2Component c, const fmi2StatusKind 
 }
 
 /* INTO cps specific*/
-extern "C" fmi2Status fmi2GetMaxStepsize(fmi2Component c, fmi2Real* size)
+/*extern "C" fmi2Status fmi2GetMaxStepsize(fmi2Component c, fmi2Real* size)
 {
 	return fmi2OK;
-}
+}*/
 
 // ---------------------------------------------------------------------------
 // Functions for FMI2 for Model Exchange
