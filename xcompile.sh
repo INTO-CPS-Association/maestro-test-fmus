@@ -81,7 +81,7 @@ function overtureToolWrapper
 		unzip -l vdm-tool-wrapper.zip
 		# resources
 		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/config.txt -d $1/resources/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/fmi-interpreter-0.0.1-SNAPSHOT-jar-with-dependencies.jar -d $1/resources/
+		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/fmi-interpreter-*-jar-with-dependencies.jar -d $1/resources/
 
 		bindir=$1/build
 		mkdir -p $bindir/{darwin64,win32,win64,linux32,linux64}
