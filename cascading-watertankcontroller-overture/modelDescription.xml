@@ -61,8 +61,8 @@
 
 	<ModelStructure>
 		<Outputs>
-			<Unknown index="4" dependencies="3" />
-			<Unknown index="6" dependencies="5" />
+			<Unknown index="4" dependencies="" />
+			<Unknown index="6" dependencies="" />
 		</Outputs>
 
 	</ModelStructure>
