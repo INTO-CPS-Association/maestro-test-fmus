@@ -48,7 +48,7 @@
 
 	<ModelStructure>
 		<Outputs>
-			<Unknown index="3" dependencies="4" />
+			<Unknown index="3" dependencies="" />
 		</Outputs>
 		<Derivatives>
 			<Unknown index="3" />
