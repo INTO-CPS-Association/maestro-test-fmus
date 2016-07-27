@@ -119,8 +119,8 @@ function assemble
 		echo Copying files...
 		cp $1/modelDescription.xml $B/fmu/
 
-		cp $1/sources/*.* $B/fmu/sources/
-		cp $1/resources/*.* $B/fmu/resources/ 2>/dev/null || :
+		cp -r $1/sources/*.* $B/fmu/sources/
+		cp -r $1/resources/*.* $B/fmu/resources/ 2>/dev/null || :
 
 		BIN=$B/fmu/binaries
 		cp $B/darwin64/*.dylib $BIN/darwin64/
