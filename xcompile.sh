@@ -81,6 +81,7 @@ function overtureToolWrapper
 		unzip -l vdm-tool-wrapper.zip
 
 		mkdir -p $1/resources/model/
+    mkdir -p $1/sources/
 		cp $1/modelDescription.xml $1/resources/model/modelDescription.xml
 		
 		# resources
