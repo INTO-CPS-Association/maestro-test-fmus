@@ -150,8 +150,8 @@
 	</ModelVariables>
 	<ModelStructure>
 		<Outputs>
-			<Unknown index="39" />
-			<Unknown index="42" />
+			<Unknown index="39" dependencies=""/>
+			<Unknown index="42" dependencies=""/>
 		</Outputs>
 	</ModelStructure>
 </fmiModelDescription>
