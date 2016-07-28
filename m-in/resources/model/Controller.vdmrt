@@ -1,0 +1,34 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+class Controller
+
+instance variables
+	initial : bool := true;
+
+operations
+
+
+operations
+
+private loop : () ==>()
+loop()==
+  cycles(2) (
+  if(initial) then
+  (
+  System`hwi.value.setValue(System`hwi.offset.getValue());
+  initial := false;
+  ) else
+  (
+
+   System`hwi.value.setValue(System`hwi.value.getValue()+1);
+		)	
+    
+   );
+
+thread
+periodic(10E6,0,0,0)(loop);	 
+		 
+end Controller
