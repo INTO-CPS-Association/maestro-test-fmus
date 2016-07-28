@@ -1,0 +1,17 @@
+-- Generated class
+class HardwareInterface
+
+
+
+instance variables
+	-- @ interface: type = input, name="in1";
+	public in1 : IntPort := new IntPort(0);
+	-- @ interface: type = input, name="in2";
+	public in2 : IntPort := new IntPort(0);
+
+
+
+  
+  
+end HardwareInterface
+
