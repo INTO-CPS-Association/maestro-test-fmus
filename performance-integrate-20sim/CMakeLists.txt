@@ -31,7 +31,7 @@ file(GLOB CPP_FILES sources/.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${C_FILES} ${CPP_FILES})
 
-include_directories(sources ../includes/fmi ../includes/templates)
+include_directories(sources ../includes/fmi/include ../includes/templates)
 
 foreach(LETTER ${CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES})
 	

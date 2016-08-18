@@ -1,3 +1,6 @@
 [submodule "toolchains/cmake-toolchains"]
 	path = toolchains/cmake-toolchains
 	url = https://github.com/zyga/cmake-toolchains.git
+[submodule "includes/fmi/include"]
+	path = includes/fmi/include
+	url = https://github.com/into-cps/fmi.git
