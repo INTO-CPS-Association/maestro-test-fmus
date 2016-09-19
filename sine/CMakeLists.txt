@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8.5)
-project (singlewatertank-20sim C CXX)
+project (sine C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR on)
 
