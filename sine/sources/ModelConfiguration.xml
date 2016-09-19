@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelConfiguration>
+	<schemeVersion>
+		<major>1</major>
+		<minor>0</minor>
+		<revision>0</revision>
+		<patch>0</patch>
+	</schemeVersion>
+	<general>
+		<name>Sine</name>
+		<description>&lt;Description&gt;&lt;Version&gt;4.0&lt;/Version&gt;&lt;IsMainModel&gt;1&lt;/IsMainModel&gt;&lt;KeepParameterValues&gt;False&lt;/KeepParameterValues&gt;
+   &lt;LibraryPath&gt;Signal\Sources\WaveGenerator-Sine.emx&lt;/LibraryPath&gt;
+  &lt;TimeStamp&gt;2007-9-27 16:12:6&lt;/TimeStamp&gt;
+&lt;/Description&gt;</description>
+		<creationDate>2015-09-22T09:16:16.0Z</creationDate>
+		<modelDir></modelDir>
+		<originalModel>C:\data\into-cps\org.intocps.fmu.examples\performance\src\main\resources\Sinus Integrator Model.emx</originalModel>
+		<additional>INTO-CPS, 20-sim 4.5 Professional Single</additional>
+		<creator>
+			<name>20-sim</name>
+			<version>
+				<major>4</major>
+				<minor>5</minor>
+				<revision>1</revision>
+				<patch>5561</patch>
+			</version>
+		</creator>
+	</general>
+	<run>
+		<startTime>0.0</startTime>
+		<finishTime>10.0</finishTime>
+		<stepSize>0.01</stepSize>
+	</run>
+	<modelVariables count="3">
+		<modelVariable id="1">
+			<name>output</name>
+			<kind>output</kind>
+			<type>real</type>
+			<value>0.0</value>
+			<description></description>
+			<storage>
+				<name>xx_V</name>
+				<index>0</index>
+			</storage>
+			<iconIndex>1</iconIndex>
+		</modelVariable>
+		<modelVariable id="2">
+			<name>amplitude</name>
+			<kind>parameter</kind>
+			<type>real</type>
+			<value>1.0</value>
+			<description>amplitude of the wave</description>
+			<storage>
+				<name>xx_P</name>
+				<index>0</index>
+			</storage>
+			<iconIndex>1</iconIndex>
+		</modelVariable>
+		<modelVariable id="3">
+			<name>omega</name>
+			<kind>parameter</kind>
+			<type>real</type>
+			<value>1.0</value>
+			<description>angular frequency of the wave</description>
+			<physical>
+				<unit>
+					<name>rad/s</name>
+				</unit>
+				<quantity>angular velocity</quantity>
+			</physical>
+			<storage>
+				<name>xx_P</name>
+				<index>1</index>
+			</storage>
+			<iconIndex>1</iconIndex>
+		</modelVariable>
+	</modelVariables>
+	<storage>
+		<name>ivc_Sinus_Integrator_Model</name>
+		<size>24</size>
+		<tables>
+			<table>
+				<name>xx_V</name>
+				<size>8</size>
+				<kind>real</kind>
+				<kindSize>8</kindSize>
+				<count>1</count>
+			</table>
+			<table>
+				<name>xx_P</name>
+				<size>16</size>
+				<kind>real</kind>
+				<kindSize>8</kindSize>
+				<count>2</count>
+			</table>
+		</tables>
+	</storage>
+	<icons>
+		<icon>89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff6100000006624b474400ff00ff00ffa0bda793000000097048597300000ec400000ec401952b0e1b0000022e49444154388d9592c14a1b511486bf7be7ce9d6846348931415b09144545417c81d627702176e153e933b811baab0b17c5958bea46507021627421c469085924ce243377e67661d3185a8afdd7e7ff38e7f009fb123a9d0eff9b8989095492241c1d1dd16eb7c9b2eccd652925939393a8288a088280dddd5dd2347d33446bcdc1c1014a0881528a244988a21eb99c440848123152f03c4b920806fc414f0e065cd7e5f8f82b77777d8240a3947db52edcdcb884a140ca11ee1020a520087e7075a5b8be1ea3df9748094a59da6d878b8b71ea758debdabf035c179e9e7caa554ba1606834144a81d6707bebb2b1d1a3db7508438994e24f409af6b1f623f9bc43a5d2a3d592589b128696381654ab3d9432349b123040869420c230b4fbfb7b682d383999627d3d44eb84fbfb4f2c2e7e230ca709822516164e6936dfd3edbea356fb4eb9bc4cabd54119632895a6d9d9d9218af6d8defe4cb93cc5e9e918cbcbf3048122cb24abab1f787e76383f1f67737389cbcb49eaf52fc3131cc741088d940ac771a854321a8d1c71ec32339361adc2f7c1f7a1d9f430c6a158344380b5f6b748c6c0ec6cc2e3a3a2d914944a06635ee6aad584b3b31c8e63291432d46b80effb48293106f2f98c95951e9e6711bf9e1ec782b93943a79350ab091e1e18028c316c6d6d91cbe5b036238e05f3f309d6be5839806419acadf510c223cb046ab0baebba148b45d2341d114508f0bc51fbac05d7d5a4698a88e3d81e1e1e124511d68e5af6af4829d15af313ef0b025f227b6cdc0000000049454e44ae426082</icon>
+	</icons>
+</modelConfiguration>
