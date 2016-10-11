@@ -36,7 +36,7 @@ add_definitions(-DFMI_2 -DBUILD_LIBFMI)
 
 add_library(${PROJECT_NAME} SHARED ${C_FILES} ${CPP_FILES})
 
-include_directories(sources /Users/kel/data/into-cps/fmi/include)
+include_directories(sources ../includes/fmi/include)
 
 foreach(LETTER ${CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES})
 	
