@@ -1,0 +1,33 @@
+-- Generated class
+class HardwareInterface
+
+
+
+instance variables
+	-- @ interface: type = input, name="SigIn1";
+	public SigIn1 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = input, name="SigIn2";
+	public SigIn2 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = input, name="SigIn3";
+	public SigIn3 : RealPort :=new RealPort(0.0);
+
+		-- @ interface: type = input;
+	public SigIn4 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = input;
+	public SigIn5 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = input;
+	public SigIn6 : RealPort :=new RealPort(0.0);
+
+instance variables
+	
+	-- @ interface: type = output, name="SigOut1";
+	public SigOut1 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = output, name="SigOut2";
+	public SigOut2 : RealPort :=new RealPort(0.0);
+	-- @ interface: type = output, name="SigOut3";
+	public SigOut3 : RealPort :=new RealPort(0.0);
+	
+
+
+end HardwareInterface
+

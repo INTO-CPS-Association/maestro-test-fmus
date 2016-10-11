@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription 	fmiVersion="2.0" 
+						modelName="VarTestCtrl" 
+						guid="{193698a3-f519-477c-b547-62a4e60bede5}" 
+						description="" 
+						author="" 
+						version="Version 1" 
+						copyright="Copyright Overture tool (Aarhus University)" 
+						license="Some Overture FMI License" 
+						generationTool="Overture Tool FMI Exporter"
+						generationDateAndTime="2016-09-19T14:42:50" 
+						variableNamingConvention="flat" 
+						numberOfEventIndicators="0">
+
+	<CoSimulation 	modelIdentifier="VarTestCtrl" 
+					needsExecutionTool="true" 
+					canHandleVariableCommunicationStepSize="true" 
+					canInterpolateInputs="false" 
+					maxOutputDerivativeOrder="0" 
+					canRunAsynchronuously="false" 
+					canBeInstantiatedOnlyOncePerProcess="false"
+					canNotUseMemoryManagementFunctions="true" 
+					canGetAndSetFMUstate="false" 
+					canSerializeFMUstate="false" 
+					providesDirectionalDerivative="false">
+		
+		
+			<SourceFiles>
+				<File name="Controller.vdmrt" />
+				<File name="HardwareInterface.vdmrt" />
+				<File name="lib\Fmi.vdmrt" />
+				<File name="lib\IO.vdmrt" />
+				<File name="System.vdmrt" />
+				<File name="World.vdmrt" />
+
+			</SourceFiles>
+		
+		</CoSimulation>
+
+
+
+	<LogCategories>
+		<Category name="logAll" />
+		<Category name="logError" />
+		<Category name="logFmiCall" />
+<!-- Category name="logShm" /-->
+<!-- Category name="logLaunch" /-->
+		<Category name="Protocol" />
+		<Category name="VdmOut" />
+		<Category name="VdmErr" />
+	</LogCategories>
+
+	<VendorAnnotations>
+		<Tool name="Overture">
+			<Overture>
+				<link valueReference="0" name="sys.hwi.SigIn5.value" />
+				<link valueReference="1" name="sys.hwi.SigOut2.value" />
+				<link valueReference="2" name="sys.hwi.SigIn3.value" />
+				<link valueReference="3" name="sys.hwi.SigIn1.value" />
+				<link valueReference="4" name="sys.hwi.SigOut1.value" />
+				<link valueReference="5" name="sys.hwi.SigIn2.value" />
+				<link valueReference="6" name="sys.hwi.SigIn6.value" />
+				<link valueReference="7" name="sys.hwi.SigOut3.value" />
+				<link valueReference="8" name="sys.hwi.SigIn4.value" />
+
+			</Overture>
+		</Tool>
+	</VendorAnnotations>
+
+
+	<ModelVariables>
+
+		<!-- Index 1 -->
+		<ScalarVariable name="SigIn5" valueReference="0" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+		<!-- Index 2 -->
+		<ScalarVariable name="SigOut2" valueReference="1" causality="output" variability="discrete" initial="calculated"><Real  /></ScalarVariable>
+		<!-- Index 3 -->
+		<ScalarVariable name="SigIn3" valueReference="2" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+		<!-- Index 4 -->
+		<ScalarVariable name="SigIn1" valueReference="3" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+		<!-- Index 5 -->
+		<ScalarVariable name="SigOut1" valueReference="4" causality="output" variability="discrete" initial="calculated"><Real  /></ScalarVariable>
+		<!-- Index 6 -->
+		<ScalarVariable name="SigIn2" valueReference="5" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+		<!-- Index 7 -->
+		<ScalarVariable name="SigIn6" valueReference="6" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+		<!-- Index 8 -->
+		<ScalarVariable name="SigOut3" valueReference="7" causality="output" variability="discrete" initial="calculated"><Real  /></ScalarVariable>
+		<!-- Index 9 -->
+		<ScalarVariable name="SigIn4" valueReference="8" causality="input" variability="discrete"><Real start="0.0" /></ScalarVariable>
+
+	
+	</ModelVariables>
+
+	<ModelStructure>
+	<Outputs>
+			<Unknown index="2"  dependencies=""/>			<Unknown index="5"  dependencies=""/>			<Unknown index="8"  dependencies=""/>
+	</Outputs>
+
+
+	</ModelStructure>
+
+</fmiModelDescription>

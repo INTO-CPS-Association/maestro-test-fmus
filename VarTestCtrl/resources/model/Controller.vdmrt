@@ -1,0 +1,45 @@
+-- DESTECS (Design Support and Tooling for Embedded Control Software)
+-- Grant Agreement Number: INFSO-ICT-248134
+-- Seventh Framework Programme
+-- WaterTank project: introductory project to the DESTECS tool.
+-- More details can be found at DESTECS User Manual, chapter 6.
+class Controller
+
+
+  
+
+operations
+
+  
+instance variables
+
+counter:int :=0;
+inputs : [seq of RealPort] :=nil;
+outputs : [seq of RealPort] := nil;
+
+operations
+
+public loop : () ==>()
+loop()==
+	cycles(2)
+   (-- retrieve the first value from Co-SIM
+   if inputs=nil then inputs :=[sys`hwi.SigIn1,sys`hwi.SigIn2,sys`hwi.SigIn3,sys`hwi.SigIn4,sys`hwi.SigIn5,sys`hwi.SigIn6];
+    if outputs=nil then outputs :=[sys`hwi.SigOut1,sys`hwi.SigOut2,sys`hwi.SigOut3];
+  
+   
+			IO`println("New state: \n\t");
+   for all i in set inds inputs do(
+   IO`print("Input ");IO`print(i);IO`print(" = ");IO`print(inputs(i).getValue());IO`print("\n\t");
+   );
+ 
+    counter:=counter+1;
+    IO`printf("New output is: %s\n",[counter]);
+       for all i in set inds outputs do(
+   outputs(i).setValue(counter)
+   );
+   );
+
+thread
+periodic(50E6,0,0,0)(loop);	 
+		 
+end Controller
