@@ -26,13 +26,10 @@ ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
-file(GLOB C_FILES sources/all.c) # ../includes/templates/*.c)
+file(GLOB C_FILES sources/all.c)
 file(GLOB CPP_FILES sources/*.cpp)
 
 add_definitions(-DFMI_2 -DBUILD_LIBFMI)
-
-#add_definitions(-DFMI_2 -DFMI2_FUNCTION_PREFIX= -DFMIprefix=,-DFMI2_Export)
-
 
 add_library(${PROJECT_NAME} SHARED ${C_FILES} ${CPP_FILES})
 
@@ -52,8 +49,6 @@ message(STATUS "Static linking with libstdc++.a in ${STDCPP_LIBRARY}")
 target_link_libraries(${PROJECT_NAME} ${STDCPP_LIBRARY})
 
 
-#IF(NOT(DEFINED XOSX))
-
 if (UNIX)
         if(APPLE)
 
@@ -66,7 +61,7 @@ if (UNIX)
 ENDIF()
 ENDIF()
 
-target_link_libraries(${PROJECT_NAME} ${PTHREAD_LIBRARY})
+#target_link_libraries(${PROJECT_NAME} ${PTHREAD_LIBRARY})
 
 # I need this: -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
 
