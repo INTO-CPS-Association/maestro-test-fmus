@@ -173,4 +173,5 @@
         declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
     </ScalarVariable>
   </ModelVariables>
+	<ModelStructure/>
 </fmiModelDescription>
