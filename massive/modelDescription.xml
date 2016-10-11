@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="massive"
+  guid="{0c235f5c-e7ce-4341-91c9-80fa75ff3122}"
+  generationTool="Dymola Version 2016 (64-bit), 2015-04-15"
+  generationDateAndTime="2016-10-06T13:38:31Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="0">
+  <ModelExchange
+    modelIdentifier="massive"
+    canGetAndSetFMUstate="true"
+    providesDirectionalDerivative="true">
+    <SourceFiles>
+      <File
+        name="all.c"/>
+    </SourceFiles>
+  </ModelExchange>
+  <CoSimulation
+    modelIdentifier="massive"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canGetAndSetFMUstate="true"
+    providesDirectionalDerivative="true">
+    <SourceFiles>
+      <File
+        name="all.c"/>
+    </SourceFiles>
+  </CoSimulation>
+  <UnitDefinitions>
+    <Unit
+      name="1"/>
+    <Unit
+      name="s">
+      <BaseUnit s="1"/>
+    </Unit>
+  </UnitDefinitions>
+  <TypeDefinitions>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealInput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealOutput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Time">
+      <Real
+        quantity="Time"
+        unit="s"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Types.Init">
+      <Enumeration>
+        <Item name="NoInit"
+          value="1"
+          description="No initialization (start values are used as guess values with fixed=false)"/>
+        <Item name="SteadyState"
+          value="2"
+          description="Steady state initialization (derivatives of states are zero)"/>
+        <Item name="InitialState"
+          value="3"
+          description="Initialization with initial states"/>
+        <Item name="InitialOutput"
+          value="4"
+          description="Initialization with initial outputs (and steady state of the states if possible)"/>
+      </Enumeration>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="1.0"
+    tolerance="0.0001"/>
+  <VendorAnnotations>
+    <Tool
+      name="FMI_2.0_Schematics">
+      <ModelHierarchy>
+        <Graphics>
+          <GraphicsGroup
+            format="Modelica"
+            coordinateSystem="{{-100,-100},{100,100}}"/>
+        </Graphics>
+        <Component
+          name="in1"
+          class="Modelica.Blocks.Continuous.FirstOrder"/>
+        <Component
+          name="in2"
+          class="Modelica.Blocks.Continuous.FirstOrder"/>
+        <Component
+          name="ext"
+          class="Modelica.Blocks.Continuous.FirstOrder"/>
+        <Port
+          name="signal_1_in">
+          <Graphics
+            placement="Placement(transformation(extent={{-98,46},{-58,86}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="signal_1_out">
+          <Graphics
+            placement="Placement(transformation(extent={{30,48},{50,68}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="signal_2_in">
+          <Graphics
+            placement="Placement(transformation(extent={{-96,6},{-56,46}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="signal_2_out">
+          <Graphics
+            placement="Placement(transformation(extent={{30,16},{50,36}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="signal_ext_in">
+          <Graphics
+            placement="Placement(transformation(extent={{-98,-28},{-58,12}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="signal_ext_out">
+          <Graphics
+            placement="Placement(transformation(extent={{30,-14},{50,6}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+      </ModelHierarchy>
+    </Tool>
+  </VendorAnnotations>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="signal_1_in"
+      valueReference="352321536"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="signal_2_in"
+      valueReference="352321537"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="signal_ext_in"
+      valueReference="352321538"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="signal_1_out"
+      valueReference="335544320"
+      causality="output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="signal_2_out"
+      valueReference="335544321"
+      causality="output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="signal_ext_out"
+      valueReference="335544322"
+      causality="output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="in1.k"
+      valueReference="16777216"
+      description="Gain"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        unit="1"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="in1.T"
+      valueReference="16777217"
+      description="Time Constant"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.Time"
+        start="1E-008"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="in1.initType"
+      valueReference="100663296"
+      description="Type of initialization (1: no init, 2: steady state, 3/4: initial output)"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.Init"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="in1.y_start"
+      valueReference="100663297"
+      description="Initial or guess value of output (= state)"
+      variability="fixed">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="in1.u"
+      valueReference="352321536"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="in1.y"
+      valueReference="33554432"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 13 -->
+    <ScalarVariable
+      name="der(in1.y)"
+      valueReference="587202560"
+      description="der(Connector of Real output signal)">
+      <Real derivative="12"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 14 -->
+    <ScalarVariable
+      name="in2.k"
+      valueReference="16777218"
+      description="Gain"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        unit="1"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 15 -->
+    <ScalarVariable
+      name="in2.T"
+      valueReference="16777219"
+      description="Time Constant"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.Time"
+        start="1E-008"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 16 -->
+    <ScalarVariable
+      name="in2.initType"
+      valueReference="100663298"
+      description="Type of initialization (1: no init, 2: steady state, 3/4: initial output)"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.Init"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 17 -->
+    <ScalarVariable
+      name="in2.y_start"
+      valueReference="100663299"
+      description="Initial or guess value of output (= state)"
+      variability="fixed">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 18 -->
+    <ScalarVariable
+      name="in2.u"
+      valueReference="352321537"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 19 -->
+    <ScalarVariable
+      name="in2.y"
+      valueReference="33554433"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 20 -->
+    <ScalarVariable
+      name="der(in2.y)"
+      valueReference="587202561"
+      description="der(Connector of Real output signal)">
+      <Real derivative="19"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 21 -->
+    <ScalarVariable
+      name="ext.k"
+      valueReference="16777220"
+      description="Gain"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        unit="1"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 22 -->
+    <ScalarVariable
+      name="ext.T"
+      valueReference="16777221"
+      description="Time Constant"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.Time"
+        start="1E-008"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 23 -->
+    <ScalarVariable
+      name="ext.initType"
+      valueReference="100663300"
+      description="Type of initialization (1: no init, 2: steady state, 3/4: initial output)"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.Init"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 24 -->
+    <ScalarVariable
+      name="ext.y_start"
+      valueReference="100663301"
+      description="Initial or guess value of output (= state)"
+      variability="fixed">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 25 -->
+    <ScalarVariable
+      name="ext.u"
+      valueReference="352321538"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 26 -->
+    <ScalarVariable
+      name="ext.y"
+      valueReference="33554434"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 27 -->
+    <ScalarVariable
+      name="der(ext.y)"
+      valueReference="587202562"
+      description="der(Connector of Real output signal)">
+      <Real derivative="26"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 28 -->
+    <ScalarVariable
+      name="sig1Init"
+      valueReference="16777222"
+      causality="parameter"
+      variability="fixed">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 29 -->
+    <ScalarVariable
+      name="sig2Init"
+      valueReference="16777223"
+      causality="parameter"
+      variability="fixed">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 30 -->
+    <ScalarVariable
+      name="extInit"
+      valueReference="16777224"
+      causality="parameter"
+      variability="fixed">
+      <Real start="0"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="4"
+        dependencies="26"
+        dependenciesKind="fixed"/>
+      <Unknown index="5"
+        dependencies="19"
+        dependenciesKind="fixed"/>
+      <Unknown index="6"
+        dependencies="12"
+        dependenciesKind="fixed"/>
+    </Outputs>
+    <Derivatives>
+      <Unknown index="13"
+        dependencies="1 12"
+        dependenciesKind="fixed fixed"/>
+      <Unknown index="20"
+        dependencies="2 19"
+        dependenciesKind="fixed fixed"/>
+      <Unknown index="27"
+        dependencies="3 26"
+        dependenciesKind="fixed fixed"/>
+    </Derivatives>
+    <InitialUnknowns>
+      <Unknown index="4"
+        dependencies="30"
+        dependenciesKind="dependent"/>
+      <Unknown index="5"
+        dependencies="29"
+        dependenciesKind="dependent"/>
+      <Unknown index="6"
+        dependencies="28"
+        dependenciesKind="dependent"/>
+      <Unknown index="12"
+        dependencies="28"
+        dependenciesKind="dependent"/>
+      <Unknown index="13"
+        dependencies="1 7 8 28"
+        dependenciesKind="dependent dependent dependent dependent"/>
+      <Unknown index="19"
+        dependencies="29"
+        dependenciesKind="dependent"/>
+      <Unknown index="20"
+        dependencies="2 14 15 29"
+        dependenciesKind="dependent dependent dependent dependent"/>
+      <Unknown index="26"
+        dependencies="30"
+        dependenciesKind="dependent"/>
+      <Unknown index="27"
+        dependencies="3 21 22 30"
+        dependenciesKind="dependent dependent dependent dependent"/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>
