@@ -76,35 +76,14 @@ function compileLinux32
 
 function overtureToolWrapper
 {
-		wget http://overture.au.dk/into-cps/vdm-tool-wrapper/development/latest/vdm-tool-wrapper.zip -O vdm-tool-wrapper.zip
+		JAR=fmu-import-export.jar
+		wget http://overture.au.dk/into-cps/vdm-tool-wrapper/development/latest/fmu-import-export.jar -O $JAR
 
-		unzip -l vdm-tool-wrapper.zip
+		MODEL=$1/model
+		NAME=$2
 
+		java -jar $JAR -export --tool -name $NAME -root $MODEL -output $1
 
-    mkdir -p $1/sources/
-    touch $1/sources/none.txt
-		cp $1/modelDescription.xml $1/resources/modelDescription.xml
-		
-		# resources
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/config.txt -d $1/resources/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/resources/fmi-interpreter-*-jar-with-dependencies.jar -d $1/resources/
-
-		bindir=$1/build
-		mkdir -p $bindir/{darwin64,win32,win64,linux32,linux64}
-		#tool wrapper binaries
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/darwin64/vdm-tool-wrapper.dylib -d $bindir/darwin64/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win32/vdm-tool-wrapper.dll -d $bindir/win32/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/win64/vdm-tool-wrapper.dll -d $bindir/win64/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux32/vdm-tool-wrapper.so -d $bindir/linux32/
-		unzip -o -j vdm-tool-wrapper.zip vdm-tool-wrapper/binaries/linux64/vdm-tool-wrapper.so -d $bindir/linux64/
-		#rename
-		
-		
-		mv $bindir/darwin64/*.dylib $bindir/darwin64/$2.dylib
-		mv $bindir/linux64/*.so $bindir/linux64/$2.so
-		mv $bindir/linux32/*.so $bindir/linux32/$2.so
-		mv $bindir/win64/*.dll $bindir/win64/$2.dll
-		mv $bindir/win32/*.dll $bindir/win32/$2.dll
 }
 
 function assemble
@@ -164,10 +143,12 @@ do
 						overtureToolWrapper $D $name
 				else
 						xcompile $D
+						assemble $D $name
 				fi
 		else
 				xcompile $D
+				assemble $D $name
 		fi
-		assemble $D $name
+
 done
 
