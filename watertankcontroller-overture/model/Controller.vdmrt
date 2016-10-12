@@ -41,12 +41,12 @@ controlLoop()==
 			-- determine the valve setting or abort
 			if level >= maxLevel then
 			(
-				valveActuator.setValveState(ValveActuator`on);
+				valveActuator.setValve(ValveActuator`on);
 			);
 
 			if level <= minLevel then
 			(
-				valveActuator.setValveState(ValveActuator`off);
+				valveActuator.setValve(ValveActuator`off);
 			);
 		)
 	);	

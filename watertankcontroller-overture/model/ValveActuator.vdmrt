@@ -1,0 +1,23 @@
+class ValveActuator
+
+instance variables
+
+port : BoolPort;
+
+values
+	public on	: bool = true;
+	public off	: bool = false;
+
+
+operations
+
+public ValveActuator : BoolPort==>ValveActuator
+ValveActuator(p)==port:=p;
+
+public setValve: bool ==> ()
+setValve(value)==(
+	
+	IO`print("Valve state changed: ");IO`print(value); IO`print("\n");
+		port.setValue(value);
+)
+end ValveActuator
