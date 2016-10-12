@@ -3,17 +3,17 @@
 -- Seventh Framework Programme
 -- WaterTank project: introductory project to the DESTECS tool.
 -- More details can be found at DESTECS User Manual, chapter 6.
-class LowerLevelSensor
+class LowerValveActuator
 
-instance variables
-	
-  lowerlevel   : real := 0.0;
-  public fault : real := 0.0;
-  
+values
+
+  public open  : bool = true;
+  public close : bool = false;
+
 operations
 
-public getLevel : () ==> real
-getLevel () == 
-  return lowerlevel;
+public setValveState : bool ==> ()
+setValveState (state) == 
+  System`hwi.lowerValve.setValue(state);
 
-end LowerLevelSensor
+end LowerValveActuator

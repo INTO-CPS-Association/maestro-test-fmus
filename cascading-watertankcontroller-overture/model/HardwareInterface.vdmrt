@@ -1,0 +1,32 @@
+-- Generated class
+class HardwareInterface
+
+values
+	-- @ interface: type = parameter, name="Controller.maxlevel1";
+	public maxlevel1 : RealPort = new RealPort(5.0);
+	-- @ interface: type = parameter, name="Controller.minlevel1";
+	public minlevel1 : RealPort = new RealPort(2.0);
+	-- @ interface: type = parameter, name="Controller.maxlevel2";
+	public maxlevel2 : RealPort = new RealPort(5.0);
+	-- @ interface: type = parameter, name="Controller.minlevel2";
+	public minlevel2 : RealPort = new RealPort(2.0);
+
+
+instance variables
+	-- @ interface: type = input, name="System.upperLevelSensor.upperlevel";
+	public upperLevel : RealPort := new RealPort(1.0);
+	-- @ interface: type = input, name="System.lowerLevelSensor.lowerlevel";
+	public lowerLevel : RealPort := new RealPort(1.0);
+
+
+instance variables
+	-- @ interface: type = output, name="System.upperValveActuator.valveState";
+	public upperValve : BoolPort := new BoolPort(false);
+	-- @ interface: type = output, name="System.lowerValveActuator.valveState";
+	public lowerValve : BoolPort := new BoolPort(false);
+
+
+  
+  
+end HardwareInterface
+

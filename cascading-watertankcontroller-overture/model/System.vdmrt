@@ -7,6 +7,12 @@ system System
 
 instance variables
 
+-- Hardware interface variable required by FMU Import/Export
+public static hwi: HardwareInterface := new HardwareInterface();
+
+
+instance variables
+
   public static controller : [Controller] := nil;
   upperLevelSensor   : UpperLevelSensor;
   lowerLevelSensor   : LowerLevelSensor;

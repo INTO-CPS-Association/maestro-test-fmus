@@ -3,11 +3,8 @@
 -- Seventh Framework Programme
 -- WaterTank project: introductory project to the DESTECS tool.
 -- More details can be found at DESTECS User Manual, chapter 6.
-class LowerValveActuator
+class UpperValveActuator
 
-instance variables
-	
-  public static valveState : bool := false;
 
 values
 
@@ -18,6 +15,6 @@ operations
 
 public setValveState : bool ==> ()
 setValveState (state) == 
-  valveState := state;
+   System`hwi.upperValve.setValue(state);
 
-end LowerValveActuator
+end UpperValveActuator

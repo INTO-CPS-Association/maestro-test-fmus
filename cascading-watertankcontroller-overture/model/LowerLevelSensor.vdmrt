@@ -3,17 +3,16 @@
 -- Seventh Framework Programme
 -- WaterTank project: introductory project to the DESTECS tool.
 -- More details can be found at DESTECS User Manual, chapter 6.
-class UpperLevelSensor
+class LowerLevelSensor
 
 instance variables
-
-  upperlevel   : real := 0.0;
+	
   public fault : real := 0.0;
   
 operations
 
 public getLevel : () ==> real
 getLevel () == 
-  return upperlevel;
+  return System`hwi.lowerLevel.getValue();
 
-end UpperLevelSensor
+end LowerLevelSensor

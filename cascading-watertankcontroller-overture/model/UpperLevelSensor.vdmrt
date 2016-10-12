@@ -3,21 +3,16 @@
 -- Seventh Framework Programme
 -- WaterTank project: introductory project to the DESTECS tool.
 -- More details can be found at DESTECS User Manual, chapter 6.
-class UpperValveActuator
+class UpperLevelSensor
 
 instance variables
-	
-  public static valveState : bool :=false;
 
-values
-
-  public open  : bool = true;
-  public close : bool = false;
-
+  public fault : real := 0.0;
+  
 operations
 
-public setValveState : bool ==> ()
-setValveState (state) == 
-  valveState := state;
+public getLevel : () ==> real
+getLevel () == 
+  return System`hwi.upperLevel.getValue();
 
-end UpperValveActuator
+end UpperLevelSensor
