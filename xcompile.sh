@@ -82,7 +82,7 @@ function overtureToolWrapper
 		MODEL=$1/model
 		NAME=$2
 
-		java -jar $JAR -export --tool -name $NAME -root $MODEL -output $1
+		java -jar $JAR --verbose -f -export tool -name $NAME -root $MODEL -output $1
 
 }
 
