@@ -165,6 +165,7 @@ extern "C" fmi2Status fmi2SetString(fmi2Component c, const fmi2ValueReference vr
 	for(int i =0; i < nvr ; i++)
 		{
 			printf("String is: '%s'\n",value[i]);
+			fflush(stdout);
 		}
 	return fmi2OK;
 }
