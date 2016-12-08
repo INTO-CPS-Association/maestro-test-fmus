@@ -21,10 +21,17 @@
 		<ScalarVariable name="sOut" 
 			valueReference="2" 
 			causality="output" 
-			variability="continuous"	
+			variability="discrete"	
 			initial="approx">
 			<String start="1" />
 		</ScalarVariable>
+
+<ScalarVariable name="size" valueReference="0"
+			 causality="parameter"
+			variability="fixed" initial="exact">
+			<Real start="0"/>
+		</ScalarVariable>
+
 
 	</ModelVariables>
 

@@ -30,6 +30,7 @@ static uintptr_t state = 0;
 static uintptr_t expectedState = 0;
 std::string* name;
 double g_time=0;
+int g_length = 0;
 
 
 #define SSTR( x ) dynamic_cast< std::ostringstream & >(									\
@@ -164,6 +165,11 @@ extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr
 {
 	printf("in fmi2GetString\n");fflush(stdout);
 	std::string s("Times:");
+	int length = g_time;
+	if(g_length!=0)
+		{
+			length = g_length;
+		}
 	for(int i =0;i< g_time;i++)
 		{
 			std::ostringstream oss;
@@ -188,6 +194,11 @@ extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr
 
 extern "C" fmi2Status fmi2SetReal(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, const fmi2Real value[])
 {
+	for(int i =0; i < nvr ; i++)
+		{
+			g_length = value[i];
+		}
+	
 	return fmi2OK;
 }
 
