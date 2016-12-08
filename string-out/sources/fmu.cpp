@@ -166,11 +166,11 @@ extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr
 	printf("in fmi2GetString\n");fflush(stdout);
 	std::string s("Times:");
 	int length = g_time;
-	if(g_length!=0)
+	if(g_length>0)
 		{
 			length = g_length;
 		}
-	for(int i =0;i< g_time;i++)
+	for(int i =0;i< length;i++)
 		{
 			std::ostringstream oss;
 			oss << i;
