@@ -33,6 +33,8 @@ add_library(${PROJECT_NAME} SHARED ${C_FILES} ${CPP_FILES})
 
 include_directories(sources ../includes/fmi/include)
 
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lpthread")
+
 foreach(LETTER ${CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES})
 	
 	if(EXISTS "${LETTER}/libstdc++.a")
