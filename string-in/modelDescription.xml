@@ -21,9 +21,12 @@
 
 		<ScalarVariable name="sIn" valueReference="4"
 			causality="input" variability="discrete">
-			<String />
+			<String start=""/>
 		</ScalarVariable>
 	</ModelVariables>
+
+  <ModelStructure>
+  </ModelStructure>
 
 
 </fmiModelDescription>
