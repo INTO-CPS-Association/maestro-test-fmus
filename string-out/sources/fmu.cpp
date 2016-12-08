@@ -162,7 +162,7 @@ extern "C" fmi2Status fmi2GetBoolean(fmi2Component c, const fmi2ValueReference v
 
 extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr[], size_t nvr, fmi2String value[])
 {
-
+	printf("in fmi2GetString\n");fflush(stdout);
 	std::string s("Times:");
 	for(int i =0;i< g_time;i++)
 		{
@@ -173,12 +173,14 @@ extern "C" fmi2Status fmi2GetString(fmi2Component c, const fmi2ValueReference vr
 		}
 
 	const char* a = s.c_str();
+	printf("in fmi2GetString. Generated output string: %s\n",a);fflush(stdout);
 
 	for(int i =0; i < nvr ; i++)
 		{
 			char *b = new char[strlen(a) + 1]{};
 			std::copy(a, a + strlen(a), b);
 
+			printf("in fmi2GetString. Inserting return value for %d '%s'\n",i,b);fflush(stdout);
 			value[i] = b;
 		}
 	return fmi2OK;
