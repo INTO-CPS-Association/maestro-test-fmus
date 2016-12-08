@@ -48,6 +48,10 @@ target_link_libraries(${PROJECT_NAME} ${STDCPP_LIBRARY})
 
 
 
+
+find_library(PTHREAD_LIBRARY NAMES libpthread.a libpthread.dylib)
+target_link_libraries(${PROJECT_NAME} ${PTHREAD_LIBRARY})
+
 # I need this: -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
 
 if (WIN32)
