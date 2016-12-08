@@ -17,52 +17,13 @@
 #include "fmi2Functions.h"
 
 #include <string.h>
-
-//#include <map>
-
-//static std::map <int, ExternalClient> clients;
 #include <vector>
 #include <sstream>
-#include <cmath>
 
-const fmi2CallbackFunctions *g_functions;
-static uintptr_t state = 0;
-static uintptr_t expectedState = 0;
 std::string* name;
 double g_time=0;
 
 
-#define SSTR( x ) dynamic_cast< std::ostringstream & >(									\
-																											 ( std::ostringstream() << std::dec << x ) ).str()
-
-template<class T>
-static void log(const fmi2CallbackFunctions *functions, fmi2ComponentEnvironment componentEnvironment,
-								fmi2String instanceName, fmi2Status status, fmi2String category, fmi2String message, T arg)
-{
-	if (functions != NULL && functions->logger != NULL)
-		{
-			functions->logger(componentEnvironment, instanceName, status, category, message, arg);
-		}
-}
-
-static void notimplemented(fmi2Component c, fmi2String message)
-{
-	std::string base("Not implemented: %s");
-	std::string m(message);
-	if (g_functions != NULL)
-		{
-			log(g_functions, (void*) 2, "", fmi2Error, "error", (base + m).c_str(), "");
-		}
-}
-
-template<class T>
-static void fmiprintf(fmi2String message, T arg)
-{
-	if (g_functions != NULL)
-		{
-			log(g_functions, (void*) 2, name->c_str(), fmi2OK, "logAll", message, arg);
-		}
-}
 
 // ---------------------------------------------------------------------------
 // FMI functions
@@ -72,15 +33,12 @@ extern "C" fmi2Component fmi2Instantiate(fmi2String instanceName, fmi2Type fmuTy
 																				 fmi2Boolean loggingOn)
 {
 	name = new std::string(instanceName);
-	g_functions = functions;
-	fmiprintf("instantiating rollback-test %s\n", "");
 	return (void*) 2;
 }
 
 extern "C" fmi2Status fmi2SetupExperiment(fmi2Component c, fmi2Boolean toleranceDefined, fmi2Real tolerance,
 																					fmi2Real startTime, fmi2Boolean stopTimeDefined, fmi2Real stopTime)
 {
-
 	return fmi2OK;
 }
 
@@ -204,7 +162,6 @@ extern "C" fmi2Status fmi2SetBoolean(fmi2Component c, const fmi2ValueReference v
 extern "C" fmi2Status fmi2SetString(fmi2Component c, const fmi2ValueReference vr[], size_t nvr,
 																		const fmi2String value[])
 {
-
 	for(int i =0; i < nvr ; i++)
 		{
 			printf("String is: '%s'\n",value[i]);
@@ -214,37 +171,29 @@ extern "C" fmi2Status fmi2SetString(fmi2Component c, const fmi2ValueReference vr
 
 extern "C" fmi2Status fmi2GetFMUstate(fmi2Component c, fmi2FMUstate* FMUstate)
 {
-	*FMUstate = (void*) state;
-	fmiprintf("returning state: %lu", state);
 	return fmi2OK;
 }
 extern "C" fmi2Status fmi2SetFMUstate(fmi2Component c, fmi2FMUstate FMUstate)
 {
-	state = (uintptr_t) FMUstate;
-	fmiprintf("Changed state to: %lu", state);
 	return fmi2OK;
 }
 extern "C" fmi2Status fmi2FreeFMUstate(fmi2Component c, fmi2FMUstate* FMUstate)
 {
-	fmiprintf("freeing state: %lu", state);
 	return fmi2OK;
 }
 
 extern "C" fmi2Status fmi2SerializedFMUstateSize(fmi2Component c, fmi2FMUstate FMUstate, size_t *size)
 {
-	notimplemented(c, "fmi2SerializedFMUstateSize");
 	return fmi2Error;
 }
 extern "C" fmi2Status fmi2SerializeFMUstate(fmi2Component c, fmi2FMUstate FMUstate, fmi2Byte serializedState[],
 																						size_t size)
 {
-	notimplemented(c, "fmi2SerializeFMUstate");
 	return fmi2Error;
 }
 extern "C" fmi2Status fmi2DeSerializeFMUstate(fmi2Component c, const fmi2Byte serializedState[], size_t size,
 																							fmi2FMUstate* FMUstate)
 {
-	notimplemented(c, "fmi2DeSerializeFMUstate");
 	return fmi2Error;
 }
 
@@ -252,7 +201,6 @@ extern "C" fmi2Status fmi2GetDirectionalDerivative(fmi2Component c, const fmi2Va
 																									 size_t nUnknown, const fmi2ValueReference vKnown_ref[], size_t nKnown, const fmi2Real dvKnown[],
 																									 fmi2Real dvUnknown[])
 {
-	notimplemented(c, "fmi2GetDirectionalDerivative");
 	return fmi2Error;
 }
 
@@ -264,20 +212,17 @@ extern "C" fmi2Status fmi2GetDirectionalDerivative(fmi2Component c, const fmi2Va
 extern "C" fmi2Status fmi2SetRealInputDerivatives(fmi2Component c, const fmi2ValueReference vr[], size_t nvr,
 																									const fmi2Integer order[], const fmi2Real value[])
 {
-	notimplemented(c, "fmi2SetRealInputDerivatives");
 	return fmi2Error;
 }
 
 extern "C" fmi2Status fmi2GetRealOutputDerivatives(fmi2Component c, const fmi2ValueReference vr[], size_t nvr,
 																									 const fmi2Integer order[], fmi2Real value[])
 {
-	notimplemented(c, "fmi2GetRealOutputDerivatives");
 	return fmi2Error;
 }
 
 extern "C" fmi2Status fmi2CancelStep(fmi2Component c)
 {
-	notimplemented(c, "fmi2CancelStep");
 	return fmi2Error;
 }
 

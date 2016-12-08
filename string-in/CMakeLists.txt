@@ -9,11 +9,11 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
 CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
 if(COMPILER_SUPPORTS_CXX11)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 elseif(COMPILER_SUPPORTS_CXX0X)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 else()
-        message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
+  message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
 
@@ -35,12 +35,12 @@ include_directories(sources ../includes/fmi/include)
 
 foreach(LETTER ${CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES})
 	
-if(EXISTS "${LETTER}/libstdc++.a")
-#   message (STATUS "${LETTER}")
-	set(STDCPP_LIBRARY "${LETTER}/libstdc++.a")
-else()
-#  message (STATUS "${LETTER} ---- not these")
-endif()
+	if(EXISTS "${LETTER}/libstdc++.a")
+		#   message (STATUS "${LETTER}")
+		set(STDCPP_LIBRARY "${LETTER}/libstdc++.a")
+	else()
+		#  message (STATUS "${LETTER} ---- not these")
+	endif()
 endforeach()
 
 message(STATUS "Static linking with libstdc++.a in ${STDCPP_LIBRARY}")
@@ -58,15 +58,11 @@ endif()
 
 if (UNIX)
 	if(APPLE)
-
-else()
-
-
-set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-
-endif()
+	else()
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+	endif()
 endif()
 
 set_target_properties(${PROJECT_NAME}
-                      PROPERTIES POSITION_INDEPENDENT_CODE ON, PREFIX "")
+  PROPERTIES POSITION_INDEPENDENT_CODE ON, PREFIX "")
