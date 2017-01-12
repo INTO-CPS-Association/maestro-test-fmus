@@ -28,7 +28,7 @@ operations
 public System : () ==> System
 System () == 
 (
-	levelSensor   := new LevelSensor(hwi.lavel);
+	levelSensor   := new LevelSensor(hwi.level);
 	valveActuator := new ValveActuator(hwi.valveState);
 	controller    := new Controller(levelSensor,valveActuator);
 
