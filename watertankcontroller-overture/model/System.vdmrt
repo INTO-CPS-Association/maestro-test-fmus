@@ -28,8 +28,8 @@ operations
 public System : () ==> System
 System () == 
 (
-	levelSensor   := new LevelSensor();
-	valveActuator := new ValveActuator();
+	levelSensor   := new LevelSensor(hwi.lavel);
+	valveActuator := new ValveActuator(hwi.valveState);
 	controller    := new Controller(levelSensor,valveActuator);
 
 	cpu1.deploy(controller,"Controller");
