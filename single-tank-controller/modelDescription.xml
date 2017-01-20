@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<fmiModelDescription fmiVersion="2.0" modelName="single-tank-controller"
+										 guid="{8c4e810f-3df3-4a00-8276-176fa3c9f001}" numberOfEventIndicators="0">
+
+
+	<CoSimulation modelIdentifier="single-tank-controller"
+								canHandleVariableCommunicationStepSize="true" 
+								canGetAndSetFMUstate="false"
+								canBeInstantiatedOnlyOncePerProcess="false"
+								/>
+
+	<LogCategories>
+		<Category name="logAll" />
+		<Category name="logError" />
+		<Category name="logFmiCall" />
+		<Category name="logEvent" />
+	</LogCategories>
+
+	<ModelVariables>
+
+		<!-- INDEX 1-->
+		<ScalarVariable name="level"
+										valueReference="0"
+										description="the tank level"
+										causality="input"
+										variability="continuous"
+										initial="approx">
+			<Real start="1" />
+		</ScalarVariable>
+
+		<!-- INDEX 1-->
+		<ScalarVariable name="valve"
+										valueReference="3"
+										description="the tank valve state"
+										causality="output"
+										variability="discrete">
+			<Boolean start="0" />
+		</ScalarVariable>
+
+		<!-- INDEX 2-->
+		<ScalarVariable name="maxlevel"
+										valueReference="1"
+										description="the max tank level"
+										causality="parameter"
+										variability="fixed"
+										initial="exact">
+			<Real start="10" />
+		</ScalarVariable>
+
+		<!-- INDEX 3-->
+		<ScalarVariable name="minlevel"
+										valueReference="2"
+										description="the min tank level"
+										causality="parameter"
+										variability="fixed"
+										initial="exact">
+			<Real start="2" />
+		</ScalarVariable>
+
+	</ModelVariables>
+
+  <ModelStructure>
+
+		<Outputs>
+			<Unknown index="2" dependencies="" />
+		</Outputs>
+		
+  </ModelStructure>
+
+
+</fmiModelDescription>

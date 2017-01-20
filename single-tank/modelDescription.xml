@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<fmiModelDescription fmiVersion="2.0" modelName="single-tank"
+										 guid="{8c4e810f-3df3-4a00-8276-176fa3c9f001}" numberOfEventIndicators="0">
+
+
+	<CoSimulation modelIdentifier="single-tank"
+								canHandleVariableCommunicationStepSize="true" 
+								canGetAndSetFMUstate="false"
+								canBeInstantiatedOnlyOncePerProcess="false"
+								/>
+
+	<LogCategories>
+		<Category name="logAll" />
+		<Category name="logError" />
+		<Category name="logFmiCall" />
+		<Category name="logEvent" />
+	</LogCategories>
+
+	<ModelVariables>
+
+		<!-- INDEX 1-->
+		<ScalarVariable name="level" valueReference="0"
+										description="the tank level"
+										causality="output"
+										variability="continuous"
+										initial="approx">
+			<Real start="1" />
+		</ScalarVariable>
+
+		<!-- INDEX 1-->
+		<ScalarVariable name="valve" valueReference="3"
+										description="the tank valve state"
+										causality="input"
+										variability="discrete">
+			<Boolean start="0" />
+		</ScalarVariable>
+	</ModelVariables>
+
+  <ModelStructure>
+
+		<Outputs>
+			<Unknown index="1" dependencies="" />
+		</Outputs>
+		
+  </ModelStructure>
+
+
+</fmiModelDescription>
