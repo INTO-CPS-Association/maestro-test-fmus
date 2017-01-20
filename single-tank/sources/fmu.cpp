@@ -276,14 +276,13 @@ extern "C" fmi2Status fmi2DoStep(fmi2Component c, fmi2Real currentCommunicationP
 	{
 		*valveState = fmi2False;
 	}
-
 #else
 	if (state->bools[BOOL_VALVE_ID] == fmi2True)
 	{
-		*level = (*level) - 1;
+		*level = (*level) - 0.1;
 	} else
 	{
-		*level = (*level) + 1;
+		*level = (*level) + 0.1;
 	}
 
 #endif

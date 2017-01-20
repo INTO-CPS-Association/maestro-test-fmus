@@ -3,7 +3,7 @@ project (single-tank-controller C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR on)
 
-add_definitions(-DLIBXML_STATIC -DFMI_COSIMULATION -DGUID1="{ddd} -DCONTROLLER")
+add_definitions(-DLIBXML_STATIC -DFMI_COSIMULATION -DGUID1="{ddd}" -DCONTROLLER)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
