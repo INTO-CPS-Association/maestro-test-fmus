@@ -34,7 +34,7 @@
 										description="the tank valve state"
 										causality="output"
 										variability="discrete">
-			<Boolean start="0" />
+			<Boolean/>
 		</ScalarVariable>
 
 		<!-- INDEX 2-->
