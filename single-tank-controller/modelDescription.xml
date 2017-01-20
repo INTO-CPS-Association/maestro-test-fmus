@@ -24,8 +24,7 @@
 										valueReference="0"
 										description="the tank level"
 										causality="input"
-										variability="continuous"
-										initial="approx">
+										variability="continuous">
 			<Real start="1" />
 		</ScalarVariable>
 
