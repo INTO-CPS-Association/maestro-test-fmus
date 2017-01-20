@@ -1,4 +1,9 @@
 #!/bin/bash
+
+JAR=fmu-import-export.jar
+rm -f $JAR
+
+
 set -e
 
 threads=4
@@ -76,8 +81,12 @@ function compileLinux32
 
 function overtureToolWrapper
 {
-		JAR=fmu-import-export.jar
-		wget http://overture.au.dk/into-cps/vdm-tool-wrapper/development/latest/fmu-import-export.jar -O $JAR
+		if [ -f "$JAR" ]
+		then
+				echo "Skipping download of $JAR"
+		else
+				wget http://overture.au.dk/into-cps/vdm-tool-wrapper/development/latest/fmu-import-export.jar -O $JAR
+		fi
 
 		MODEL=$1/model
 		NAME=$2
