@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<fmiModelDescription fmiVersion="2.0" modelName="add-parameter"
+	guid="{8c4e810f-3df3-4a00-8276-176fa3c9f041}" numberOfEventIndicators="0">
+
+
+	<CoSimulation modelIdentifier="add-parameter"
+		canHandleVariableCommunicationStepSize="true" canGetAndSetFMUstate="false" />
+
+	<LogCategories>
+		<Category name="logAll" />
+		<Category name="logError" />
+		<Category name="logFmiCall" />
+		<Category name="logEvent" />
+	</LogCategories>
+
+	<ModelVariables>
+
+		<ScalarVariable name="out" valueReference="0"
+			causality="output" variability="continuous" initial="approx">
+			<Real start="0" />
+		</ScalarVariable>
+
+		<ScalarVariable name="addition" valueReference="1"
+			causality="parameter" variability="fixed" initial="exact">
+			<Real start="1" />
+		</ScalarVariable>
+
+		<ScalarVariable name="in" valueReference="2" causality="input"
+			variability="continuous">
+			<Real start="0" />
+		</ScalarVariable>
+
+		<ScalarVariable name="activated" valueReference="3"
+			causality="parameter" variability="fixed" initial="exact">
+			<Boolean start="0" />
+		</ScalarVariable>
+
+		<ScalarVariable name="feedback" valueReference="4"
+			causality="parameter" variability="fixed" initial="exact">
+			<Boolean start="0" />
+		</ScalarVariable>
+
+	</ModelVariables>
+
+	<ModelStructure>
+		<Outputs>
+			<Unknown index="1" />
+		</Outputs>
+	</ModelStructure>
+
+</fmiModelDescription>
