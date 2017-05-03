@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="MassSpringDamper1" guid="{da03fa66-a02a-43d6-a906-db865e2ea044}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="MassSpringDamper1" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="false" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="true" canSerializeFMUstate="false" providesDirectionalDerivative="false">
+<SourceFiles>
+<File name="EulerAngles.c" />
+<File name="fmi2Functions.c" />
+<File name="MotionProfiles.c" />
+<File name="xxfuncs.c" />
+<File name="xxinteg.c" />
+<File name="xxinverse.c" />
+<File name="xxmatrix.c" />
+<File name="xxmodel.c" />
+<File name="xxsubmod.c" />
+<File name="xxTable2D.c" />
+</SourceFiles>
+</CoSimulation>
+<DefaultExperiment startTime="0.0" stopTime="10.0" stepSize="0.01" />
+<ModelVariables>
+<ScalarVariable name="fk" valueReference="5" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="c1" valueReference="0" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="d1" valueReference="1" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="m1" valueReference="2" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="x1" valueReference="7" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="x1_initial" valueReference="4" variability="fixed" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="v1_dot" valueReference="8" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="v1" valueReference="6" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="v1_initial" valueReference="3" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="5" dependencies="" />
+<Unknown index="8" dependencies="" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
