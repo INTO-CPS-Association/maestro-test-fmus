@@ -3,7 +3,7 @@ project (MassSpringDamper1 C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR on)
 
-
+add_definitions(-DNO_FUNCTION_PREFIX)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
