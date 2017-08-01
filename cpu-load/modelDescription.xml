@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		fmiVersion="2.0"
+		modelName="cpu-load"
+		guid="{9f1d2555-743d-4e30-a6f9-f678fa064938}"
+		generationTool="C code"
+		generationDateAndTime="2016-10-06T13:44:22Z"
+		variableNamingConvention="structured"
+		numberOfEventIndicators="0">
+  <CoSimulation
+			modelIdentifier="cpu-load"
+			canHandleVariableCommunicationStepSize="true"
+			canInterpolateInputs="false"
+			maxOutputDerivativeOrder="0"
+			canGetAndSetFMUstate="false"
+			canBeInstantiatedOnlyOncePerProcess="false"
+			providesDirectionalDerivative="false">
+    <SourceFiles>
+      <File
+					name="all.c"/>
+    </SourceFiles>
+  </CoSimulation>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+				name="start"
+				valueReference="0"
+				causality="parameter"
+				variability="fixed"
+				initial="exact"
+				>
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+				name="in"
+				valueReference="2"
+				variability="continuous"
+      	causality="input">
+      <Real start="0"/>
+
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+				name="out"
+				valueReference="3"
+				causality="output"
+				variability="continuous"
+				initial="approx">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+				name="repeat"
+				valueReference="1"
+				variability="fixed"
+     		causality="parameter">
+      <Integer start="1000000000"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="3"
+							 dependencies=""
+							 dependenciesKind=""/>
+    </Outputs>
+  </ModelStructure>
+</fmiModelDescription>
