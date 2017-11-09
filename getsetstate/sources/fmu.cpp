@@ -245,10 +245,13 @@ extern "C" fmi2Status fmi2GetFMUstate(fmi2Component c, fmi2FMUstate* FMUstate)
 	*sp = state;
 	*FMUstate = sp;
 	fmiprintf("returning state: %p", *sp);
+	sp->show();
 	return fmi2OK;
 }
 extern "C" fmi2Status fmi2SetFMUstate(fmi2Component c, fmi2FMUstate FMUstate)
 {
+	printf("Current state is: ");
+  state.show();
 	state = *((State*) FMUstate);
 	fmiprintf("Changed state to: %p", FMUstate);
 	fmiprintf("Changed state to: int[0]=%d", state.ints[0]);
@@ -258,6 +261,7 @@ extern "C" fmi2Status fmi2SetFMUstate(fmi2Component c, fmi2FMUstate FMUstate)
 extern "C" fmi2Status fmi2FreeFMUstate(fmi2Component c, fmi2FMUstate* sptr)
 {
 	fmiprintf("freeing state: %p", sptr);
+  ((State*)*sptr)->show();
 	delete *sptr;
 	return fmi2OK;
 }
