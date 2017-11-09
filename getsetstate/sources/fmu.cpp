@@ -41,6 +41,14 @@ struct State{
 				printf("%d, ",ints[i]);
 			}
 
+
+ printf("Doubles= ");
+    for(int i = 0 ; i<S ; i++)
+      {
+        printf("%f", doubles[i]);
+      }
+
+
 		printf("Bools= ");
 		for(int i = 0 ; i<S ; i++)
 			{
