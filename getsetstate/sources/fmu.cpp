@@ -26,42 +26,7 @@ const fmi2CallbackFunctions *g_functions;
 std::string* name;
 
 fmi2ComponentEnvironment env;
-#define S 10
-struct State{
 
-	double doubles[S];
-	int ints[S];
-	bool bools[S];
-
-	void show()
-	{
-		printf("State[ Ints=");
-		for(int i = 0 ; i<S ; i++)
-			{
-				printf("%d, ",ints[i]);
-			}
-
-
- printf("Doubles= ");
-    for(int i = 0 ; i<S ; i++)
-      {
-        printf("%f", doubles[i]);
-      }
-
-
-		printf("Bools= ");
-		for(int i = 0 ; i<S ; i++)
-			{
-				printf("%s", bools[i]? "true," : "false,");
-			}
-		printf(" ]\n");
-
-
-	}
-
-};
-
-static State state;
 
 
 #define SSTR( x ) dynamic_cast< std::ostringstream & >(									\
@@ -88,13 +53,54 @@ static void notimplemented(fmi2Component c, fmi2String message)
 }
 
 template<class T>
-static void fmiprintf(fmi2String message, T arg)
+void fmiprintf(fmi2String message, T arg)
 {
 	if (g_functions != NULL)
 		{
 			log(g_functions, env, name->c_str(), fmi2OK, "logAll", message, arg);
 		}
 }
+
+
+#define S 10
+struct State{
+
+	double doubles[S];
+	int ints[S];
+	bool bools[S];
+
+
+
+	void show()
+	{
+
+ char buf[1000];
+		sprintf(buf,"State[ Ints=");
+		for(int i = 0 ; i<S ; i++)
+			{
+				sprintf(buf+ strlen(buf),"%d, ",ints[i]);
+			}
+
+
+ sprintf(buf+ strlen(buf),"Doubles= ");
+    for(int i = 0 ; i<S ; i++)
+      {
+        sprintf(buf+ strlen(buf),"%f ", doubles[i]);
+      }
+
+
+		sprintf(buf+ strlen(buf),"Bools= ");
+		for(int i = 0 ; i<S ; i++)
+			{
+				sprintf(buf+ strlen(buf),"%s", bools[i]? "true," : "false,");
+			}
+		sprintf(buf+ strlen(buf)," ]");
+fmiprintf("%s",buf);
+	}
+
+};
+
+static State state;
 
 // ---------------------------------------------------------------------------
 // FMI functions
@@ -258,7 +264,7 @@ extern "C" fmi2Status fmi2GetFMUstate(fmi2Component c, fmi2FMUstate* FMUstate)
 }
 extern "C" fmi2Status fmi2SetFMUstate(fmi2Component c, fmi2FMUstate FMUstate)
 {
-	printf("Current state is: ");
+	fmiprintf("Current state is: ","");
   state.show();
 	state = *((State*) FMUstate);
 	fmiprintf("Changed state to: %p", FMUstate);
